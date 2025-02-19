@@ -11,14 +11,14 @@ import {
 import { Button } from '@/app/ui/button';
 import { createInvoice, State } from '@/app/lib/actions';
 import { useActionState } from 'react';
-import { create } from 'domain';
-import { init } from 'next/dist/compiled/webpack/webpack';
+// import { create } from 'domain';
+// import { init } from 'next/dist/compiled/webpack/webpack';
 
 export default function Form({ customers }: { customers: CustomerField[] }) {
 
   const initialState: State = { message: null, errors: {} };
 
-  const [state, formAction] = useActionState(createInvoice, initialState);
+  const [state] = useActionState(createInvoice, initialState);
 
   return (
     <form action={createInvoice}>
